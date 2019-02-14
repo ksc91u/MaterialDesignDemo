@@ -35,7 +35,6 @@ import com.eajy.materialdesigndemo.fragment.CardsFragment;
 import com.eajy.materialdesigndemo.fragment.DialogsFragment;
 import com.eajy.materialdesigndemo.fragment.WidgetsFragment;
 import com.eajy.materialdesigndemo.util.AppUtils;
-import com.google.android.gms.ads.MobileAds;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -95,7 +94,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        MobileAds.initialize(this, getString(R.string.admob_app_id));
         initView();
         initViewPager();
 
@@ -233,8 +231,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(aboutIntent);
                 break;
             case R.id.action_menu_main_donate:
-                Intent donateIntent = new Intent(this, DonateActivity.class);
-                startActivity(donateIntent);
                 break;
             case R.id.action_menu_main_my_app:
                 Intent myAppsIntent = new Intent(this, MyAppsActivity.class);
@@ -281,8 +277,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.nav_donate:
-                intent.setClass(this, DonateActivity.class);
-                startActivity(intent);
                 break;
 
             case R.id.nav_my_apps:
